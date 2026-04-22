@@ -37,4 +37,14 @@ describe('Pruebas para la función getArtistAlbums', () => {
             })
         })
     })
+
+    test('Ambas funciones se acoplan con otro ejemplo', () => {
+        findArtist('Bad Bunny', 'https://itunes.apple.com/search?entity=musicArtist').then((data) => {
+            expect(data.info?.id).toEqual(1126808565);
+            return getArtistAlbums(data.info?.id as number, 'https://itunes.apple.com/lookup?entity=album').then((data) => {
+                expect(data.albums?.length).toEqual(50);
+                expect(data.albums?.at(0)).toEqual({launch_year: '2001', title: 'Brushfire Fairytales (Remastered) [Bonus Version]'})
+            })
+        })
+    })
 })
