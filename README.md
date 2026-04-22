@@ -13,6 +13,8 @@ A diferencia de versiones anteriores basadas en sockets TCP, esta implementació
 ## Estado del repositorio:
 
 
+
+
 ## 🚀 Guía rápida de uso
 
 Primero es necesario instalar todas las dependencias y compilar el código TypeScript:
